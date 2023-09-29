@@ -12,8 +12,9 @@ Pós entrada dos dados eles devem ser tratados, para que haja a transformação 
 ## Gerando a solução em CSV ##
 
 A geração do arquivo com as mesmas linhas e soma no fim, pode ser feita em tempo de execução, da seguinte maneira:
-    - Leitura da primeira linha, ao fim da leitura quando identificar o caractere de quebra de linha, já adiciona essa mesma linha em um novo arquivo, adicionando também uma nova coluna.
-    - Após a leitura da primeira linha de valores, eles também já serão inseridos no arquivo resposta com o valor de soma ao fim.
+
+- Leitura da primeira linha, ao fim da leitura quando identificar o caractere de quebra de linha, já adiciona essa mesma linha em um novo arquivo, adicionando também uma nova coluna.
+- Após a leitura da primeira linha de valores, eles também já serão inseridos no arquivo resposta com o valor de soma ao fim.
 
 Dessa maneira, o novo arquivo conterá as mesmas linhas do arquivo de entrada, porém com uma nova coluna soma e seus respectivos valores linha por linha.
 
