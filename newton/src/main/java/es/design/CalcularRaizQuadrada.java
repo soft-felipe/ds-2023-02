@@ -1,9 +1,9 @@
 package es.design;
 
-public class CalcularRaizQuadrada {
-    public static double calcularRaizQuadrada(double numero, double tolerancia) throws Exception {
-        if (numero < 0) throw new Exception("Número negativo não possui raíz!");
+import java.util.function.Function;
 
+public class CalcularRaizQuadrada implements Function<Double, Double> {
+    public static double calcularRaizQuadrada(double numero, double tolerancia) throws Exception {
         if (numero == 0) return 0.0;
 
         double aproximacao = numero;
@@ -16,5 +16,14 @@ public class CalcularRaizQuadrada {
         }
 
         return aproximacao;
+    }
+
+    @Override
+    public Double apply(Double aDouble) {
+        try {
+            return calcularRaizQuadrada(aDouble, 1e-06);
+        } catch (Exception ignore) {}
+
+        return 0.0;
     }
 }
