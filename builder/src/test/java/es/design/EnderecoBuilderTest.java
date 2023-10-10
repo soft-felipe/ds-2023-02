@@ -50,4 +50,20 @@ public class EnderecoBuilderTest {
         assertNotEquals("Brasilia", enderecoErradoTest.getCidade());
         assertNotEquals(100, enderecoErradoTest.getNumero());
     }
+
+    @Test
+    public void atributoNaoNuloTest() {
+        assertThrows(NullPointerException.class, () -> Endereco.builder()
+                .cidade("Anapolis")
+                .estado("Goias")
+                .build()
+        );
+
+        assertThrows(NullPointerException.class, () -> Endereco.builder()
+                .cidade("Exception")
+                .cep("11123-930")
+                .bloco("Vai dar ruim")
+                .build()
+        );
+    }
 }
