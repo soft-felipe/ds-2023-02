@@ -11,7 +11,7 @@ import java.util.List;
 public class Celula implements Observado {
 
     private final String nome;
-    private String valor;
+    private String valor = "";
     private List<Observador> observadores = new ArrayList<>();
 
     public Celula(String nome) {
@@ -19,10 +19,8 @@ public class Celula implements Observado {
     }
 
     public void setValor(String novoValor) {
-        if (!this.valor.equals(novoValor)) {
-            this.valor = novoValor;
-
-        }
+        this.valor = novoValor;
+        notificaObservadores(this);
     }
 
     @Override
