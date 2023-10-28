@@ -12,8 +12,8 @@ public class AnotacaoObserverTest {
         Observer observerAnnotation = clazz.getAnnotation(Observer.class);
 
         if (observerAnnotation != null) {
-            String observado = observerAnnotation.observado();
-            assertEquals("es.design.Carro", observado);
+            Class<? extends Observado> observado = observerAnnotation.observado();
+            assertEquals(Carro.class, observado);
         }
     }
 }

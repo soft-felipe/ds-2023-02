@@ -6,5 +6,5 @@ import java.lang.annotation.*;
 @Target({ElementType.TYPE})
 @Inherited
 public @interface Observer {
-    String observado() default "";
+    Class<? extends Observado> observado();
 }
